@@ -31,3 +31,8 @@
 *.exe
 *.out
 *.app
+x64/Debug
+Test/x64/Debug/Test.tlog
+Test/x64/Debug
+HoldemCore/x64/Debug
+HoldemApp/x64
