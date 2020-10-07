@@ -1,20 +1,12 @@
 #include "pch.h"
 #include <vector>
 #include "../vendor/entt/entt.hpp"
+#include "../HoldemCore/Component/Component.h"
 entt::registry reg;
 
 struct CardComponent
 {
 
-};
-
-struct MoneyComponet
-{
-	MoneyComponet(int _money)
-		:money(_money)
-	{ }
-
-	int money;
 };
 
 struct Player
@@ -23,13 +15,13 @@ public:
 	Player()
 	{
 		entity = reg.create();
-		reg.emplace<MoneyComponet>(entity, 1000);
+		reg.emplace<MoneyComponent>(entity, 1000);
 	}
 
 	int GetMoney()
 	{
-		auto comp = reg.get<MoneyComponet>(entity);
-		return comp.money;
+		auto comp = reg.get<MoneyComponent>(entity);
+		return comp.chip;
 	}
 	entt::entity entity;
 };

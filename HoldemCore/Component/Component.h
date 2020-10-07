@@ -1,4 +1,4 @@
-#include "../core_pch.h"
+#include <core_pch.h>
 
 // S D H C
 enum class EnumCard
@@ -59,20 +59,24 @@ enum class EnumCard
 };
 
 
-struct Moneny
+struct MoneyComponent
 {
+	MoneyComponent(int _chip)
+		:chip(_chip)
+	{ }
+
 	int chip;
 };
 
 
-struct Hand
+struct HandComponent
 {
 	std::vector<EnumCard> cardList;
 };
 
-struct State
+struct StateComponent
 {
-	State(bool _call, bool _fold, bool _raise, bool _die, bool _allIn ) 
+	StateComponent(bool _call, bool _fold, bool _raise, bool _die, bool _allIn )
 		:call(_call), fold(_fold), raise(_raise), die(_die), allin(_allIn)
 	{}
 
@@ -83,12 +87,12 @@ struct State
 	bool allin;
 };
 
-struct Player
+struct PlayerComponent
 {
 	entt::entity id;
 };
 
-struct Turn
+struct TurnComponent
 {
 	int turnCount;
 };

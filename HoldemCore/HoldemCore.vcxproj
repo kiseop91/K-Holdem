@@ -92,6 +92,7 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>core_pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>D:\dev\K-Holdem\vendor;D:\dev\K-Holdem\HoldemCore;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -125,6 +126,7 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>core_pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>D:\dev\K-Holdem\vendor;D:\dev\K-Holdem\HoldemCore;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -133,10 +135,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Core\Application.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Component\Component.h" />
+    <ClInclude Include="Core\Application.h" />
     <ClInclude Include="core_pch.h" />
     <ClInclude Include="Entity\Entity.h" />
     <ClInclude Include="Event\Event.h" />

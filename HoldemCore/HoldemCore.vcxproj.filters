@@ -25,10 +25,16 @@
     <Filter Include="System">
       <UniqueIdentifier>{ccc7e067-9650-4ec4-a102-7d0a26b71346}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{4b70ce44-7966-470d-a360-6a8454efb5b4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Application.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -49,6 +55,9 @@
     </ClInclude>
     <ClInclude Include="System\BoardSettingSystem.h">
       <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Application.h">
+      <Filter>Core</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
