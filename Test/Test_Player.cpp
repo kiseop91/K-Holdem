@@ -1,13 +1,7 @@
 #include "pch.h"
-#include <vector>
-#include "../vendor/entt/entt.hpp"
-#include "../HoldemCore/Component/Component.h"
+
+
 entt::registry reg;
-
-struct CardComponent
-{
-
-};
 
 struct Player
 {

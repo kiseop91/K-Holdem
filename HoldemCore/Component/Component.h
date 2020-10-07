@@ -1,4 +1,5 @@
-#include <core_pch.h>
+#include <vector>
+#include <entt/entt.hpp>
 
 // S D H C
 enum class EnumCard

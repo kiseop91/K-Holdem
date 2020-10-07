@@ -6,3 +6,8 @@
 #pragma once
 
 #include "gtest/gtest.h"
+
+#include <entt/entt.hpp>
+#include <vector>
+
+#include <Component/Component.h>

@@ -1,3 +1,5 @@
+#pragma once
+
 #include <vector>
 #include <memory>
-#include "../vendor/entt/entt.hpp"
+#include <entt/entt.hpp>
