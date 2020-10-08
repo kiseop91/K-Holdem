@@ -1,6 +1,20 @@
 #include <iostream>
+#include <Core/EntryPoint.h>
 
-int main()
+class HoldemApp : public Application
 {
-	return 0;
+public:
+	HoldemApp()
+		: Application("Test")
+	{
+	}
+
+	~HoldemApp()
+	{
+	}
+};
+
+Application* CreateApplication()
+{
+	return new HoldemApp();
 }
