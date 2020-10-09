@@ -7,6 +7,7 @@ public:
 	HoldemApp()
 		: Application("Test")
 	{
+		Run();
 	}
 
 	~HoldemApp()

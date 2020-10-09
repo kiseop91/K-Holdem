@@ -1,3 +1,4 @@
+#pragma once
 #include <entt/entt.hpp>
 
 enum class EventType
@@ -50,6 +51,7 @@ public:
 class GameStartEvent : public Event
 {
 public:
+	int a;
 	EVENT_CLASS_TYPE(GameStart)
 };
 
