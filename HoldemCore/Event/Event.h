@@ -31,18 +31,29 @@ public:
 class RaiseEvent : public Event
 {
 public:
+	RaiseEvent(size_t _raiseMoneny)
+		:raiseMoneny(_raiseMoneny) {}
+	size_t raiseMoneny;
 	EVENT_CLASS_TYPE(Raise)
 };
 
 class DieEvent : public Event
 {
 public:
+	DieEvent(entt::entity _id) 
+		:id(_id)
+	{}
+
+	entt::entity id;
 	EVENT_CLASS_TYPE(Die)
 };
 
 class AllinEvent : public Event
 {
 public:
+	AllinEvent(size_t _allinMoneny) 
+		: allinMoneny(_allinMoneny) {}
+	size_t allinMoneny;
 	EVENT_CLASS_TYPE(Allin)
 };
 

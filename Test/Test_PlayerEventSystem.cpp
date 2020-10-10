@@ -2,7 +2,6 @@
 
 
 entt::dispatcher dispatcher;
-
 struct MockPlayerEventSystem
 {
 	bool Call(const CallEvent &e)
@@ -49,10 +48,13 @@ TEST(PlayerEvent, Call) {
 
 TEST(PlayerEvent, Die)
 {
+	entt::registry reg;
+
 	MockPlayerEventSystem system;
 	dispatcher.sink<CallEvent>().connect<&MockPlayerEventSystem::Call>(system);
 	dispatcher.trigger<CallEvent>(static_cast<size_t>(9876));
-	DieEvent event;
+	entt::entity ent = reg.create();
+	DieEvent event(ent);
 }
 
 TEST(PlayerEvent, Raise)
@@ -61,8 +63,8 @@ TEST(PlayerEvent, Raise)
 	dispatcher.sink<CallEvent>().connect<&MockPlayerEventSystem::Call>(system);
 	dispatcher.trigger<CallEvent>(static_cast<size_t>(9876));
 
-	RaiseEvent event;
 
+	RaiseEvent event((size_t)1000);
 }
 
 TEST(PlayerEvent, Allin)
@@ -71,6 +73,6 @@ TEST(PlayerEvent, Allin)
 	dispatcher.sink<CallEvent>().connect<&MockPlayerEventSystem::Call>(system);
 	dispatcher.trigger<CallEvent>(static_cast<size_t>(9876));
 
-	AllinEvent event;
+	AllinEvent event((size_t)1000);
 
 }

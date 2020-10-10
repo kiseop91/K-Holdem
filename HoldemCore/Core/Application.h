@@ -33,16 +33,19 @@ public:
 	virtual ~Application();
 
 	entt::dispatcher& GetDispatcher();
+	entt::registry& GetRegistry();
+	static Application* GetApp();
 	void Run();
 
 	void OnEvent(Event& e);
 
 private:
 	//void initDispatcher
-
+	void initEvent();
 private:
 	entt::scheduler<std::uint32_t> m_Scheduler;
 	entt::dispatcher m_Dispatcher;
+	entt::registry m_Registry;
 
 	static Application* s_Instance;
 	friend int ::main(int argc, char** argv);

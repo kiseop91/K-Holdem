@@ -1,5 +1,7 @@
+#pragma once
 #include <vector>
 #include <entt/entt.hpp>
+
 
 // S D H C
 enum class EnumCard
@@ -10,6 +12,9 @@ enum class EnumCard
 	CA,C2,C3,C4,C5,C6,C7,C8,C9,C10,CJ,CQ,CK,
 };
 
+using PlayerTag = entt::tag<"PlayerTag"_hs>;
+using BoardTag = entt::tag<"BoardTag"_hs>;
+using DeckTag = entt::tag<"DeckTag"_hs>;
 
 struct MoneyComponent
 {
