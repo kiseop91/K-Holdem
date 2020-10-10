@@ -36,6 +36,12 @@
     <ClCompile Include="Core\Application.cpp">
       <Filter>Core</Filter>
     </ClCompile>
+    <ClCompile Include="System\EventSystem.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="System\BoardSettingSystem.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core_pch.h">

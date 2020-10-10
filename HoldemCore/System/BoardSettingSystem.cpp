@@ -1,8 +1,8 @@
 #include "core_pch.h"
 #include "BoardSettingSystem.h"
 
-inline void BoardEventSystem::receive(const GameStartEvent & e) { /* ... */ }
+void BoardEventSystem::StartGame(const GameStartEvent & e) { /* ... */ }
 
-inline void BoardEventSystem::receive(const GameResultEvent & e) { /* ... */ }
+void BoardEventSystem::EndGame(const GameResultEvent & e) { /* ... */ }
 
-inline void BoardEventSystem::receive(const CardDrawEvent & e) { /* ... */ }
+void BoardEventSystem::DrawCard(const CardDrawEvent & e) { /* ... */ }

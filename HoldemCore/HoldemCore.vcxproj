@@ -139,6 +139,8 @@
   <ItemGroup>
     <ClCompile Include="Core\Application.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="System\BoardSettingSystem.cpp" />
+    <ClCompile Include="System\EventSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Component\Component.h" />

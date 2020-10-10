@@ -3,7 +3,7 @@
 
 class BoardEventSystem {
 public:
-	void receive(const GameStartEvent &e);
-	void method(const GameResultEvent &e);
-	void method(const CardDrawEvent &e);
+	void StartGame(const GameStartEvent &e);
+	void EndGame(const GameResultEvent &e);
+	void DrawCard(const CardDrawEvent &e);
 };

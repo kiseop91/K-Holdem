@@ -10,4 +10,7 @@
 #include <entt/entt.hpp>
 #include <vector>
 
+#include <System/EventSystem.h>
+#include <System/BoardSettingSystem.h>
+#include <Core/Application.h>
 #include <Component/Component.h>

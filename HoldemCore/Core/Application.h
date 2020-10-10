@@ -32,12 +32,17 @@ public:
 	Application(std::string name);
 	virtual ~Application();
 
+	entt::dispatcher& GetDispatcher();
 	void Run();
 
 	void OnEvent(Event& e);
 
 private:
+	//void initDispatcher
+
+private:
 	entt::scheduler<std::uint32_t> m_Scheduler;
+	entt::dispatcher m_Dispatcher;
 
 	static Application* s_Instance;
 	friend int ::main(int argc, char** argv);

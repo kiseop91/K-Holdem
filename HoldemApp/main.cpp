@@ -1,4 +1,5 @@
 #include <iostream>
+#include <Holdem.h>
 #include <Core/EntryPoint.h>
 
 class HoldemApp : public Application
@@ -8,10 +9,12 @@ public:
 		: Application("Test")
 	{
 		Run();
+
 	}
 
 	~HoldemApp()
 	{
+
 	}
 };
 

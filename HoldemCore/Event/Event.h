@@ -21,12 +21,16 @@ public:
 class CallEvent : public Event
 {
 public:
+	CallEvent(size_t _money)
+		:callMoneny(_money) {}
 
+	size_t callMoneny;
 	EVENT_CLASS_TYPE(Call)
 };
 
 class RaiseEvent : public Event
 {
+public:
 	EVENT_CLASS_TYPE(Raise)
 };
 

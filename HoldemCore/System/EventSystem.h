@@ -3,8 +3,8 @@
 
 class PlayerEventSystem {
 public:
-	void receive(const CallEvent &e);
-	void receive(const DieEvent &e);
-	void receive(const RaiseEvent &e);
-	void receive(const AllinEvent &e);
+	void Call(const CallEvent &e);
+	void Die(const DieEvent &e);
+	void Raise(const RaiseEvent &e);
+	void Allin(const AllinEvent &e);
 };
