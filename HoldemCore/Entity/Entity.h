@@ -13,6 +13,7 @@ public:
 		reg.emplace<BoardTag>(ent);
 		reg.emplace<MoneyComponent>(ent, 0);
 		reg.emplace<PlayerComponent>(ent, (entt::entity)0);
+		reg.emplace<BoardStateComponent>(ent, BoardState::PreFlop);
 		reg.emplace<TurnComponent>(ent);
 		reg.emplace<HandComponent>(ent);
 

@@ -140,6 +140,7 @@
     <ClCompile Include="Core\Application.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="System\BoardSettingSystem.cpp" />
+    <ClCompile Include="System\DeckSystem.cpp" />
     <ClCompile Include="System\EventSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +152,7 @@
     <ClInclude Include="Event\Event.h" />
     <ClInclude Include="Holdem.h" />
     <ClInclude Include="System\BoardSettingSystem.h" />
+    <ClInclude Include="System\DeckSystem.h" />
     <ClInclude Include="System\EventSystem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
