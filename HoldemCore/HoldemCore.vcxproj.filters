@@ -36,13 +36,13 @@
     <ClCompile Include="Core\Application.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="System\EventSystem.cpp">
-      <Filter>System</Filter>
-    </ClCompile>
     <ClCompile Include="System\BoardSettingSystem.cpp">
       <Filter>System</Filter>
     </ClCompile>
     <ClCompile Include="System\DeckSystem.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="System\PlayerEventSystem.cpp">
       <Filter>System</Filter>
     </ClCompile>
   </ItemGroup>
@@ -59,9 +59,6 @@
     <ClInclude Include="Entity\Entity.h">
       <Filter>Entity</Filter>
     </ClInclude>
-    <ClInclude Include="System\EventSystem.h">
-      <Filter>System</Filter>
-    </ClInclude>
     <ClInclude Include="System\BoardSettingSystem.h">
       <Filter>System</Filter>
     </ClInclude>
@@ -75,6 +72,9 @@
       <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="System\DeckSystem.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="System\PlayerEventSystem.h">
       <Filter>System</Filter>
     </ClInclude>
   </ItemGroup>
