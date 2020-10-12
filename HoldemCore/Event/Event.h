@@ -4,7 +4,7 @@
 enum class EventType
 {
 	None = 0,
-	Call, Raise, Die, Allin, CardDraw, GameStart, GameResult
+	Call, HandView, Raise, Die, Allin, CardDraw, GameStart, GameResult
 };
 
 #define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return EventType::##type; }\
@@ -16,6 +16,16 @@ class Event
 public:
 	virtual EventType GetEventType() const = 0;
 	virtual const char* GetName() const = 0;
+};
+
+class HandViewEvent : public Event
+{
+public:
+	HandViewEvent(entt::entity _entity)
+		:entity(_entity) {}
+
+	entt::entity entity;
+	EVENT_CLASS_TYPE(HandView)
 };
 
 class CallEvent : public Event

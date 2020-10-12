@@ -3,7 +3,9 @@
 
 class PlayerEventSystem {
 public:
-	
+	//플레이어 손패확인 
+	void ViewHand(const HandViewEvent &e);
+
 	//플레이어 Call 이벤트 콜비용
 	void Call(const CallEvent &e);
 

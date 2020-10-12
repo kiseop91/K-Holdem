@@ -11,14 +11,32 @@ Application::Application(std::string name)
 	//m_Scheduler.attach<my_process>(3u);
 
 	//inputSystem.
-	auto t = m_Scheduler.attach([](auto delta, void *, auto succeed, auto fail) {
+	auto t = m_Scheduler.attach([&](auto delta, void *, auto succeed, auto fail) {
 		//카드 확인.
 		std::cout << " ------------------------------------------------------- " << std::endl;
 		std::cout << " 메뉴 : 1. 손패  2. Call  3. Raise(x2)  4. Check  5. Die " << std::endl;
 		std::cout << " ------------------------------------------------------- " << std::endl;
-		succeed();
-		int a;
-		std::cin >> a;
+		//succeed();
+		int menu;
+		std::cin >> menu;
+
+		auto view = m_Registry.view<PlayerTag>();
+		auto entity = view.back(); 
+		switch (menu)
+		{
+		case 1:
+			m_Dispatcher.trigger<HandViewEvent>(entity);
+			break;
+		case 2:
+			m_Dispatcher.trigger<CallEvent>((size_t)100);
+			break;
+		case 3:
+			m_Dispatcher.trigger<RaiseEvent>((size_t)100);
+			break;
+		default:
+			break;
+		}
+		
 	});
 
 	 // 시작 화면 
@@ -77,6 +95,7 @@ void Application::initEvent()
 	m_Dispatcher.sink<CardDrawEvent>().connect<&BoardEventSystem::DrawCard>(listener);
 
 	PlayerEventSystem playerEventSystem;
+	m_Dispatcher.sink<HandViewEvent>().connect<&PlayerEventSystem::ViewHand>(playerEventSystem);
 	m_Dispatcher.sink<CallEvent>().connect<&PlayerEventSystem::Call>(playerEventSystem);
 	m_Dispatcher.sink<RaiseEvent>().connect<&PlayerEventSystem::Raise>(playerEventSystem);
 	m_Dispatcher.sink<DieEvent>().connect<&PlayerEventSystem::Die>(playerEventSystem);

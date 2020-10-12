@@ -5,8 +5,8 @@
 #include <Entity/Entity.h>
 
 void BoardEventSystem::StartGame(const GameStartEvent & e) {
-	std::cout << e.GetName() << std::endl;
-	Application::GetApp()->GetDispatcher().trigger<CallEvent>((size_t)100);
+	std::cout << e.GetName() <<" 이벤트가 발송되었습니다. " << std::endl;
+
 	auto& reg = Application::GetApp()->GetRegistry();
 
 	// 0. 보드를 만든다.
