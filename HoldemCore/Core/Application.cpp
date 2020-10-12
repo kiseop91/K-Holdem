@@ -1,4 +1,4 @@
-#include <core_pch.h>
+ï»¿#include <core_pch.h>
 #include <Holdem.h>
 
 Application* Application::s_Instance = nullptr;
@@ -10,30 +10,25 @@ Application::Application(std::string name)
 
 	//m_Scheduler.attach<my_process>(3u);
 
-	// ½ÃÀÛ È­¸é 
-	 m_Scheduler.attach([](auto delta, void *, auto succeed, auto fail) {
-		std::cout << " ----------------------- " << std::endl;
-		std::cout << " Welcome Hold'em World!! " << std::endl;
-		std::cout << " ----------------------- " << std::endl;
+	//inputSystem.
+	auto t = m_Scheduler.attach([](auto delta, void *, auto succeed, auto fail) {
+		//ì¹´ë“œ í™•ì¸.
+		std::cout << " ------------------------------------------------------- " << std::endl;
+		std::cout << " ë©”ë‰´ : 1. ì†íŒ¨  2. Call  3. Raise(x2)  4. Check  5. Die " << std::endl;
+		std::cout << " ------------------------------------------------------- " << std::endl;
 		succeed();
+		int a;
+		std::cin >> a;
 	});
 
-	 // Ä«µåºÐ¹è ½ÃÀÛ
-
-	//inputSystem.
-	 auto t = m_Scheduler.attach([&](auto delta, void *, auto succeed, auto fail) {
-		 //Ä«µå È®ÀÎ.
-		 std::cout << " ------------------------------------------------------- " << std::endl;
-		 std::cout << " ¸Þ´º : 1. ¼ÕÆÐ  2. Call  3. Raise(x2)  4. Check  5. Die " << std::endl;
-		 std::cout << " ------------------------------------------------------- " << std::endl;
+	 // ì‹œìž‘ í™”ë©´ 
+	 m_Scheduler.attach([&](auto delta, void *, auto succeed, auto fail) {
+		 std::cout << " ----------------------- " << std::endl;
+		 std::cout << " Welcome Hold'em World!! " << std::endl;
+		 std::cout << " ----------------------- " << std::endl;
 		 succeed();
-		 int a;
-		 std::cin >> a;
-		 m_Dispatcher.trigger<CallEvent>((size_t)1);
 		 m_Dispatcher.trigger<GameStartEvent>();
-		 EntityFactory::makeBoardEntity(m_Registry);
 	 });
-
 }
 
 Application::~Application()
