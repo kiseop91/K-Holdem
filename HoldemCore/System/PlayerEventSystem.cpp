@@ -7,7 +7,7 @@ void PlayerEventSystem::ViewHand(const HandViewEvent & e)
 {
 	std::cout << e.GetName() << " 이벤트가 발송되었습니다. " << std::endl;
 	auto& reg = Application::GetApp()->GetRegistry();
-	const auto& hand = reg.get<HandComponent>(e.entity);
+	const auto& hand = reg.get<HandComponent>(e.id);
 	
 	for (const auto card : hand.cardList)
 		std::cout << (int)card << "  ";
@@ -19,8 +19,18 @@ void PlayerEventSystem::Call(const CallEvent & e) {
 	e.callMoneny;
 }
 
-void PlayerEventSystem::Die(const DieEvent & e) { std::cout << e.GetName() << std::endl; }
+void PlayerEventSystem::Check(const CheckEvent & e) {
+	std::cout << e.GetName() << " 이벤트가 발송되었습니다. " << std::endl;
+}
 
-void PlayerEventSystem::Raise(const RaiseEvent & e) { std::cout << e.GetName() << std::endl; }
+void PlayerEventSystem::Die(const DieEvent & e) {
+	std::cout << e.GetName() << " 이벤트가 발송되었습니다. " << std::endl;
+}
 
-void PlayerEventSystem::Allin(const AllinEvent & e) { std::cout << e.GetName() << std::endl; }
+void PlayerEventSystem::Raise(const RaiseEvent & e) { 
+	std::cout << e.GetName() << " 이벤트가 발송되었습니다. " << std::endl;
+}
+
+void PlayerEventSystem::Allin(const AllinEvent & e) {
+	std::cout << e.GetName() << " 이벤트가 발송되었습니다. " << std::endl;
+}

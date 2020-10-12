@@ -4,7 +4,7 @@
 enum class EventType
 {
 	None = 0,
-	Call, HandView, Raise, Die, Allin, CardDraw, GameStart, GameResult
+	Call, HandView, Raise, Check, Die, Allin, CardDraw, GameStart, GameResult
 };
 
 #define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return EventType::##type; }\
@@ -21,30 +21,44 @@ public:
 class HandViewEvent : public Event
 {
 public:
-	HandViewEvent(entt::entity _entity)
-		:entity(_entity) {}
+	HandViewEvent(entt::entity _id)
+		:id(_id) {}
 
-	entt::entity entity;
+	entt::entity id;
 	EVENT_CLASS_TYPE(HandView)
 };
 
 class CallEvent : public Event
 {
 public:
-	CallEvent(size_t _money)
-		:callMoneny(_money) {}
+	CallEvent(entt::entity _id, size_t _money)
+		:id(_id), callMoneny(_money) {}
 
 	size_t callMoneny;
+	entt::entity id;
 	EVENT_CLASS_TYPE(Call)
 };
 
 class RaiseEvent : public Event
 {
 public:
-	RaiseEvent(size_t _raiseMoneny)
-		:raiseMoneny(_raiseMoneny) {}
-	size_t raiseMoneny;
+	RaiseEvent(entt::entity _id, size_t _raiseMoneny)
+		:id(_id), raiseMoneny(_raiseMoneny) {}
 	EVENT_CLASS_TYPE(Raise)
+
+	entt::entity id;
+	size_t raiseMoneny;
+};
+
+class CheckEvent : public Event
+{
+public:
+	CheckEvent(entt::entity _id)
+		:id(_id)
+	{}
+
+	entt::entity id;
+	EVENT_CLASS_TYPE(Check)
 };
 
 class DieEvent : public Event
@@ -61,9 +75,11 @@ public:
 class AllinEvent : public Event
 {
 public:
-	AllinEvent(size_t _allinMoneny) 
-		: allinMoneny(_allinMoneny) {}
+	AllinEvent(entt::entity _id, size_t _allinMoneny)
+		:id(_id), allinMoneny(_allinMoneny) {}
+	
 	size_t allinMoneny;
+	entt::entity id;
 	EVENT_CLASS_TYPE(Allin)
 };
 
@@ -76,7 +92,6 @@ public:
 class GameStartEvent : public Event
 {
 public:
-	int a;
 	EVENT_CLASS_TYPE(GameStart)
 };
 

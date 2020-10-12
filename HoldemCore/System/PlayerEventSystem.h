@@ -9,6 +9,9 @@ public:
 	//플레이어 Call 이벤트 콜비용
 	void Call(const CallEvent &e);
 
+	//플레이어 Call 이벤트 콜비용
+	void Check(const CheckEvent &e);
+
 	//플레이어 Die
 	void Die(const DieEvent &e);
 

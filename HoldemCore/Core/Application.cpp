@@ -12,7 +12,6 @@ Application::Application(std::string name)
 
 	//inputSystem.
 	auto t = m_Scheduler.attach([&](auto delta, void *, auto succeed, auto fail) {
-		//카드 확인.
 		std::cout << " ------------------------------------------------------- " << std::endl;
 		std::cout << " 메뉴 : 1. 손패  2. Call  3. Raise(x2)  4. Check  5. Die " << std::endl;
 		std::cout << " ------------------------------------------------------- " << std::endl;
@@ -28,10 +27,16 @@ Application::Application(std::string name)
 			m_Dispatcher.trigger<HandViewEvent>(entity);
 			break;
 		case 2:
-			m_Dispatcher.trigger<CallEvent>((size_t)100);
+			m_Dispatcher.trigger<CallEvent>(entity, (size_t)100);
 			break;
 		case 3:
-			m_Dispatcher.trigger<RaiseEvent>((size_t)100);
+			m_Dispatcher.trigger<RaiseEvent>(entity, (size_t)100);
+			break;
+		case 4:
+			m_Dispatcher.trigger<CheckEvent>(entity);
+			break;
+		case 5:
+			m_Dispatcher.trigger<DieEvent>(entity);
 			break;
 		default:
 			break;
@@ -97,6 +102,7 @@ void Application::initEvent()
 	PlayerEventSystem playerEventSystem;
 	m_Dispatcher.sink<HandViewEvent>().connect<&PlayerEventSystem::ViewHand>(playerEventSystem);
 	m_Dispatcher.sink<CallEvent>().connect<&PlayerEventSystem::Call>(playerEventSystem);
+	m_Dispatcher.sink<CheckEvent>().connect<&PlayerEventSystem::Check>(playerEventSystem);
 	m_Dispatcher.sink<RaiseEvent>().connect<&PlayerEventSystem::Raise>(playerEventSystem);
 	m_Dispatcher.sink<DieEvent>().connect<&PlayerEventSystem::Die>(playerEventSystem);
 	m_Dispatcher.sink<AllinEvent>().connect<&PlayerEventSystem::Allin>(playerEventSystem);
