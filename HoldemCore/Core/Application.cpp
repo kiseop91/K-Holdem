@@ -15,7 +15,10 @@ Application::Application(std::string name)
 		std::cout << " ------------------------------------------------------- " << std::endl;
 		std::cout << " 메뉴 : 1. 손패  2. Call  3. Raise(x2)  4. Check  5. Die " << std::endl;
 		std::cout << " ------------------------------------------------------- " << std::endl;
-		//succeed();
+		std::cout << " 현재 보드 머니 : 99999999  ---------------------------- " << std::endl;
+		std::cout << " 현재 Call 머니 : 188284  ------------------------------ " << std::endl;
+		std::cout << " 나의 재산 : 188737  ----------------------------------- " << std::endl;
+
 		int menu;
 		std::cin >> menu;
 
