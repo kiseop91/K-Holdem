@@ -51,6 +51,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Test_Deck.cpp" />
+    <ClCompile Include="Test_BoardEventSystem.cpp" />
     <ClCompile Include="Test_Player.cpp" />
     <ClCompile Include="Test_PlayerEventSystem.cpp" />
   </ItemGroup>
