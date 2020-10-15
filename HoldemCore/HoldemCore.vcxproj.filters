@@ -45,6 +45,9 @@
     <ClCompile Include="System\PlayerEventSystem.cpp">
       <Filter>System</Filter>
     </ClCompile>
+    <ClCompile Include="BettingSystem.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core_pch.h">
@@ -75,6 +78,9 @@
       <Filter>System</Filter>
     </ClInclude>
     <ClInclude Include="System\PlayerEventSystem.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="BettingSystem.h">
       <Filter>System</Filter>
     </ClInclude>
   </ItemGroup>

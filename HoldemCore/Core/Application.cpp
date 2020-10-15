@@ -30,7 +30,7 @@ Application::Application(std::string name)
 			m_Dispatcher.trigger<HandViewEvent>(entity);
 			break;
 		case 2:
-			m_Dispatcher.trigger<CallEvent>(entity, (size_t)100);
+			m_Dispatcher.trigger<CallEvent>(entity);
 			break;
 		case 3:
 			m_Dispatcher.trigger<RaiseEvent>(entity, (size_t)100);

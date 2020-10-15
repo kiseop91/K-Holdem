@@ -31,10 +31,9 @@ public:
 class CallEvent : public Event
 {
 public:
-	CallEvent(entt::entity _id, size_t _money)
-		:id(_id), callMoneny(_money) {}
+	CallEvent(entt::entity _id)
+		:id(_id) {}
 
-	size_t callMoneny;
 	entt::entity id;
 	EVENT_CLASS_TYPE(Call)
 };

@@ -137,6 +137,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BettingSystem.cpp" />
     <ClCompile Include="Core\Application.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="System\BoardSettingSystem.cpp" />
@@ -144,6 +145,7 @@
     <ClCompile Include="System\PlayerEventSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BettingSystem.h" />
     <ClInclude Include="Component\Component.h" />
     <ClInclude Include="Core\Application.h" />
     <ClInclude Include="Core\EntryPoint.h" />

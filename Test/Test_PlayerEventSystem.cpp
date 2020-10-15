@@ -2,37 +2,6 @@
 
 
 entt::dispatcher dispatcher;
-struct MockPlayerEventSystem
-{
-	bool Call(const CallEvent &e)
-	{
-		if(e.callMoneny == 1000)
-			return true;
-		else return false;
-	}
-
-	bool Die(const CallEvent &e)
-	{
-		if (e.callMoneny == 1000)
-			return true;
-		else return false;
-	}
-
-	bool Raise(const CallEvent &e)
-	{
-		if (e.callMoneny == 1000)
-			return true;
-		else return false;
-	}
-
-	bool Allin(const CallEvent &e)
-	{
-		if (e.callMoneny == 1000)
-			return true;
-		else return false;
-	}
-};
-
 
 TEST(PlayerEvent, HandView) {
 	auto app = Application::GetApp();

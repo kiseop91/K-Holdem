@@ -68,3 +68,10 @@ struct BoardStateComponent
 		:state(_state) {}
 	BoardState state;
 };
+
+struct BettingMoneyComponent
+{
+	BettingMoneyComponent(int _money)
+	:money(_money){}
+	int money;
+};

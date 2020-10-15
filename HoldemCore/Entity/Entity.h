@@ -16,6 +16,7 @@ public:
 		reg.emplace<BoardStateComponent>(ent, BoardState::PreFlop);
 		reg.emplace<TurnComponent>(ent);
 		reg.emplace<HandComponent>(ent);
+		reg.emplace<BettingMoneyComponent>(ent, 0);
 
 		return ent;
 	}
