@@ -49,6 +49,7 @@ void SetCardToBoard(entt::registry & _reg, BoardState _state)
 
 		if (_state == BoardState::PreFlop) {
 			returnCards.clear();
+			//여기에 플레이어에 손패 나눠주도록 바꾸자.
 		}
 		else if (_state == BoardState::Flop)
 		{

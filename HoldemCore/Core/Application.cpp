@@ -11,13 +11,10 @@ Application::Application(std::string name)
 	//m_Scheduler.attach<my_process>(3u);
 
 	//inputSystem.
-	auto t = m_Scheduler.attach([&](auto delta, void *, auto succeed, auto fail) {
+	/*auto t = m_Scheduler.attach([&](auto delta, void *, auto succeed, auto fail) {
 		std::cout << " ------------------------------------------------------- " << std::endl;
 		std::cout << " 메뉴 : 1. 손패  2. Call  3. Raise(x2)  4. Check  5. Die " << std::endl;
 		std::cout << " ------------------------------------------------------- " << std::endl;
-		std::cout << " 현재 보드 머니 : 99999999  ---------------------------- " << std::endl;
-		std::cout << " 현재 Call 머니 : 188284  ------------------------------ " << std::endl;
-		std::cout << " 나의 재산 : 188737  ----------------------------------- " << std::endl;
 
 		int menu;
 		std::cin >> menu;
@@ -45,16 +42,16 @@ Application::Application(std::string name)
 			break;
 		}
 		
-	});
+	});*/
 
-	 // 시작 화면 
-	 m_Scheduler.attach([&](auto delta, void *, auto succeed, auto fail) {
-		 std::cout << " ----------------------- " << std::endl;
-		 std::cout << " Welcome Hold'em World!! " << std::endl;
-		 std::cout << " ----------------------- " << std::endl;
-		 succeed();
-		 m_Dispatcher.trigger<GameStartEvent>();
-	 });
+	 //// 시작 화면 
+	 //m_Scheduler.attach([&](auto delta, void *, auto succeed, auto fail) {
+		// std::cout << " ----------------------- " << std::endl;
+		// std::cout << " Welcome Hold'em World!! " << std::endl;
+		// std::cout << " ----------------------- " << std::endl;
+		// succeed();
+		// m_Dispatcher.trigger<GameStartEvent>();
+	 //});
 }
 
 Application::~Application()
@@ -69,6 +66,11 @@ entt::dispatcher & Application::GetDispatcher()
 entt::registry & Application::GetRegistry()
 {
 	return m_Registry;
+}
+
+entt::scheduler<std::uint32_t>& Application::GetScheduler()
+{
+	return m_Scheduler;
 }
 
 Application * Application::GetApp()

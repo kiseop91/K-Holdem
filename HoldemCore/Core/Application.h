@@ -34,13 +34,13 @@ public:
 
 	entt::dispatcher& GetDispatcher();
 	entt::registry& GetRegistry();
+	entt::scheduler<std::uint32_t>& GetScheduler();
 	static Application* GetApp();
 	void Run();
 
 	void OnEvent(Event& e);
 
 private:
-	//void initDispatcher
 	void initEvent();
 private:
 	entt::scheduler<std::uint32_t> m_Scheduler;
